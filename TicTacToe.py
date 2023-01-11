@@ -29,7 +29,7 @@ def playerMoves (icon):
     else:
         print ()
         print ("Damn :-( That space is already taken!")
-
+        
 def IsDraw ():
     if " " not in board:
         return True
@@ -48,3 +48,26 @@ def bIsWinner (icon):
         return True
     else:
         return False
+
+    
+board = [" " for x in range (9)]
+
+while True:
+    displayBoard ()
+    playerMoves ("X")
+    displayBoard ()
+    if bIsWinner ("X"):
+        print ("Yay! X wins!")
+        break
+    elif IsDraw ():
+        print ("Yay, it's a Draw!")
+        break
+    playerMoves ("O")
+    if bIsWinner ("O"):
+        displayBoard ()
+        print ("Yay! O wins!")
+        break
+    elif IsDraw ():
+        print ("It's a IsDraw!")
+        break
+    
