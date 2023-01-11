@@ -29,3 +29,22 @@ def playerMoves (icon):
     else:
         print ()
         print ("Damn :-( That space is already taken!")
+
+def IsDraw ():
+    if " " not in board:
+        return True
+    else:
+        return False
+
+def bIsWinner (icon):
+    if (board[0] == icon and board[1] == icon and board[2] == icon) or \
+       (board[3] == icon and board[4] == icon and board[5] == icon) or \
+       (board[6] == icon and board[7] == icon and board[8] == icon) or \
+       (board[0] == icon and board[3] == icon and board[6] == icon) or \
+       (board[1] == icon and board[4] == icon and board[7] == icon) or \
+       (board[2] == icon and board[5] == icon and board[8] == icon) or \
+       (board[0] == icon and board[4] == icon and board[8] == icon) or \
+       (board[2] == icon and board[4] == icon and board[6] == icon):
+        return True
+    else:
+        return False
